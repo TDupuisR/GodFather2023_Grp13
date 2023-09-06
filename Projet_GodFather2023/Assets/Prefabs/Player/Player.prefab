@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8792548381305752464}
   - component: {fileID: 8792548381305752467}
   - component: {fileID: 8792548381305752557}
-  - component: {fileID: 8792548381305752466}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -173,18 +172,3 @@ MonoBehaviour:
   m_maxSpeed: 62
   m_speedParaboleProgression: 0.2
   m_speedParaboleSpeedFactor: 10
---- !u!114 &8792548381305752466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8792548381305752554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bdc75a762ebe5a4cb25a5766d973e7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_focusButton: {fileID: -3566524135862300974, guid: 21d72b022f22e5f4caf78de684dc5b0f, type: 3}
-  m_maxFocusTime: 4
-  m_focusTimeScale: 0.5

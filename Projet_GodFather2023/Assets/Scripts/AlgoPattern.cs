@@ -28,12 +28,13 @@ public class AlgoPattern : MonoBehaviour
         {
             while (m_spawnIndex == m_lastPattern)
             {
-                int m_spawnIndex = Random.Range(0, m_PatternList.Count);
+                m_spawnIndex = Random.Range(0, m_PatternList.Count);
             }
 
-            GameObject newPattern = Instantiate(m_PatternList[m_spawnIndex], transform);
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + m_distanceBtwPatterns);
-            m_spawnIndex = m_lastPattern;
+            GameObject newPattern = Instantiate(m_PatternList[m_spawnIndex], transform);
+            newPattern.transform.parent = null;
+            m_lastPattern = m_spawnIndex;
         }
     }
 }

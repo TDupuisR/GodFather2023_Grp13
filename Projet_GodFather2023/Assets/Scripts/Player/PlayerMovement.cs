@@ -54,12 +54,17 @@ public class PlayerMovement : MonoBehaviour
     float m_speedParaboleX;
     float m_speed;
 
+    //Score Calculation
+    float m_startingZPosition;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         m_meshRenderer = GetComponent<MeshRenderer>();
         m_collider = GetComponent<SphereCollider>();
         m_speed = m_minSpeed;
+
+        m_startingZPosition = transform.position.z;
     }
 
     private void FixedUpdate()
@@ -100,6 +105,12 @@ public class PlayerMovement : MonoBehaviour
         //Apply Acceleration
         Vector3 Apply_Movement = new Vector3(0, 0, m_speed);
         transform.Translate(Apply_Movement * Time.deltaTime);
+    }
+
+    public int CalculateScore()
+    {
+        int score = (int)(transform.position.z - m_startingZPosition);
+        return score;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -149,4 +160,6 @@ public class PlayerMovement : MonoBehaviour
         }
         m_collider.enabled = true;
     }
+
+    
 }
