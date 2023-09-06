@@ -707,6 +707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2223872603260860227, guid: b9d4f06fecd1bcf4cb94077b03354ad7, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2223872603355854772, guid: b9d4f06fecd1bcf4cb94077b03354ad7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -816,6 +820,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 8792548381305752464, guid: b1a68fb7d506d9d489e64ed32a1ead7d, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
     - target: {fileID: 8792548381305752465, guid: b1a68fb7d506d9d489e64ed32a1ead7d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -864,6 +872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8792548381305752557, guid: b1a68fb7d506d9d489e64ed32a1ead7d, type: 3}
+      propertyPath: m_pointerAcceleration
+      value: 
+      objectReference: {fileID: 2972885862715734956, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1a68fb7d506d9d489e64ed32a1ead7d, type: 3}
 --- !u!114 &8792548379662358226 stripped

@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 8792548381305752465}
   - component: {fileID: 8792548381305752467}
   - component: {fileID: 8792548381305752556}
-  - component: {fileID: 8792548381305752557}
   - component: {fileID: 8792548381305752464}
+  - component: {fileID: 8792548381305752557}
   - component: {fileID: 6005634665826708677}
+  - component: {fileID: 2387068161561951180}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -149,33 +150,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8792548381305752557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8792548381305752554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f3b241a0be60240bcb4901b9ed3e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_meshRenderer: {fileID: 1067073181747353019}
-  m_pointerAcceleration: {fileID: 2972885862715734956, guid: 21d72b022f22e5f4caf78de684dc5b0f, type: 3}
-  m_sensiPlanMovement: 0.05
-  m_smoothTime: 0.08
-  m_clampX: 6
-  m_clampY: 3.3
-  m_clampSpeed: 1
-  m_knockbackPower: 450
-  m_knockbackTime: 1
-  m_knockbackAlignement: 0
-  m_RecoveryTime: 1
-  m_minSpeed: 1
-  m_maxSpeed: 62
-  m_speedParaboleProgression: 0.2
-  m_speedParaboleSpeedFactor: 10
 --- !u!114 &8792548381305752464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 21d72b022f22e5f4caf78de684dc5b0f, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -206,6 +180,33 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerAction
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &8792548381305752557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8792548381305752554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f3b241a0be60240bcb4901b9ed3e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_meshRenderer: {fileID: 1067073181747353019}
+  m_pointerAcceleration: {fileID: 2972885862715734956, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
+  m_sensiPlanMovement: 0.05
+  m_smoothTime: 0.08
+  m_clampX: 6
+  m_clampY: 3.3
+  m_clampSpeed: 1
+  m_knockbackPower: 450
+  m_knockbackTime: 1
+  m_knockbackAlignement: 0
+  m_RecoveryTime: 1
+  m_minSpeed: 1
+  m_maxSpeed: 62
+  m_speedParaboleProgression: 0.2
+  m_speedParaboleSpeedFactor: 10
 --- !u!114 &6005634665826708677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +223,19 @@ MonoBehaviour:
   m_shockWaveMaxRange: 100
   m_amountGainPickUpPowerUp: 20
   m_currentPowerUpGauge: 0
+--- !u!114 &2387068161561951180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8792548381305752554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bdc75a762ebe5a4cb25a5766d973e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_focusButton: {fileID: -3566524135862300974, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
+  m_maxFocusTime: 4
+  m_focusTimeScale: 0.5
+  m_focusRecoverMultiplier: 1

@@ -411,7 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2223872603260860226}
   - component: {fileID: 2223872603260860227}
-  - component: {fileID: 2223872603260860224}
+  - component: {fileID: 1272291647}
   m_Layer: 5
   m_Name: FocusBar
   m_TagString: Untagged
@@ -481,18 +481,18 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2223872603355854773}
   m_FillRect: {fileID: 2223872603355854772}
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2223872603260860224
+--- !u!114 &1272291647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,9 +501,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2223872603260860229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1090dd92bc8e5c48a75e0a370ba09a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3dbe03b353823894a91a714de1dc7c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_slider: {fileID: 2223872603260860227}
 --- !u!1 &2223872603355854775
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +517,7 @@ GameObject:
   - component: {fileID: 2223872603355854770}
   - component: {fileID: 2223872603355854773}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: FillFocus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,7 +576,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 0
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -759,7 +760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1204cdc3ce4f0ae4f856c82a819d9698, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShockwaveScript: {fileID: 0}
 --- !u!1 &2223872604875511076
 GameObject:
   m_ObjectHideFlags: 0

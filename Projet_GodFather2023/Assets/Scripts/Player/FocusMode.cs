@@ -18,12 +18,11 @@ public class FocusMode : MonoBehaviour
     private float m_currentFocusTime;
     private bool m_isFocusActive = false;
     private bool m_isRecoverActive = false;
-    private bool m_canRecoverContinue = false;
 
     public delegate void OnFocusUseDelegate(float value);
     public static event OnFocusUseDelegate OnFocusUse;
 
-    private void Awake()
+    private void Start()
     {
         m_currentFocusTime = m_maxFocusTime;
         OnFocusUse.Invoke(m_currentFocusTime);
@@ -34,7 +33,7 @@ public class FocusMode : MonoBehaviour
         FocusActivation();
         if (m_isRecoverActive && !m_isFocusActive) RecoverFocusTime();
 
-        //Debug.Log("Current Time: " + m_currentFocusTime + " | is Focus active: " + m_isFocusActive + " | Time Scale: " + Time.timeScale + " | isRecover: " + m_isRecoverActive);
+        Debug.Log("Current Time: " + m_currentFocusTime + " | is Focus active: " + m_isFocusActive + " | Time Scale: " + Time.timeScale + " | isRecover: " + m_isRecoverActive);
     }
 
     private void FocusActivation()
