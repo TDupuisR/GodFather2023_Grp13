@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
     float m_currentTranslationX;
     float m_currentTranslationY;
 
-
     private void FixedUpdate()
     {
         PlanMovement();
@@ -35,8 +34,6 @@ public class PlayerMovement : MonoBehaviour
         m_translate = new(Mathf.Clamp( Mathf.SmoothDamp(m_translate.x, movementInput.x, ref m_currentTranslationX, m_smoothTime ), -m_clampSpeed, m_clampSpeed),
                           Mathf.Clamp( Mathf.SmoothDamp(m_translate.y, movementInput.y, ref m_currentTranslationY, m_smoothTime ), -m_clampSpeed, m_clampSpeed),
                           0f);
-
-        Debug.Log(m_translate);
 
         transform.Translate(m_translate);
 
