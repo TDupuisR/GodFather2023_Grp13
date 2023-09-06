@@ -1,3 +1,4 @@
+using Shirotetsu;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class CollectiblesScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //other.GetComponent<ShockWave>().
+            other.GetComponent<ShockWave>().IncreaseGaugePowerUp();
             Destroy(gameObject);
         }
     }

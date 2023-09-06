@@ -488,7 +488,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -575,9 +575,9 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2223872603590625193
@@ -651,9 +651,9 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 0
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2223872604368101929
@@ -666,6 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2223872604368101926}
   - component: {fileID: 2223872604368101924}
+  - component: {fileID: 3841472508134504597}
   m_Layer: 5
   m_Name: ShockWaveBar
   m_TagString: Untagged
@@ -740,12 +741,25 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3841472508134504597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2223872604368101929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1204cdc3ce4f0ae4f856c82a819d9698, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShockwaveScript: {fileID: 0}
 --- !u!1 &2223872604875511076
 GameObject:
   m_ObjectHideFlags: 0
