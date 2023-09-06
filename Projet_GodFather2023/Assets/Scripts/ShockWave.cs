@@ -10,10 +10,16 @@ namespace Shirotetsu
 {
     public class ShockWave : MonoBehaviour
     {
+        [Header("References")]
+        [SerializeField] private ShockWaveUIManager m_shockWUIManager;
+
+        [Header("Parameters")]
         [SerializeField] private float m_shockWaveMaxRange = 5;
 
         [SerializeField] private int m_amountGainPickUpPowerUp = 20;
-        [SerializeField] private int m_currentPowerUpGauge = 0;
+        
+
+        public int m_currentPowerUpGauge = 0;
 
         private Sequence m_destroyObstaclesSequence;
 
@@ -41,6 +47,7 @@ namespace Shirotetsu
             }
 
             m_currentPowerUpGauge = 0;
+            m_shockWUIManager.UpdateGauge(0);
         }
 
         private List<GameObject> ObstaclesInShockWaveRange()
@@ -63,6 +70,7 @@ namespace Shirotetsu
         public void IncreaseGaugePowerUp()
         {
             m_currentPowerUpGauge = Mathf.Clamp(m_currentPowerUpGauge + m_amountGainPickUpPowerUp, 0, 100);
+            m_shockWUIManager.UpdateGauge(m_currentPowerUpGauge);
         }
 
         public void IncreaseGaugePowerUpCustomAmount( int _customAmountToAdd )
