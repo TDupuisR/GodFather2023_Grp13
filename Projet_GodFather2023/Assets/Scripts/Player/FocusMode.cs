@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public class FocusMode : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] AudioSource m_audioSource;
+
     [Header("Player Input")]
     [SerializeField] InputActionReference
         m_focusButton;
@@ -12,6 +15,10 @@ public class FocusMode : MonoBehaviour
     [SerializeField][Range(0f, 10f)] private float m_maxFocusTime = 4.0f;
     [SerializeField][Range(0f, 1f)] private float m_focusTimeScale = 0.5f;
     [SerializeField][Range(0f, 10f)] private float m_focusRecoverMultiplier = 1f;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip m_focusOn;
+    [SerializeField] private AudioClip m_focusOff;
 
     [Header("Necessary")]
     private bool m_focusWasPressed = false;
@@ -65,10 +72,12 @@ public class FocusMode : MonoBehaviour
             {
                 ChangeTimeScale(m_focusTimeScale, true);
                 m_isRecoverActive = false;
+                PlaySound(m_focusOn);
             }
             else
             {
                 StartCoroutine(StopFocus());
+                PlaySound(m_focusOff);
             }
 
             m_focusWasPressed = true;
@@ -100,5 +109,11 @@ public class FocusMode : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (!m_isFocusActive) m_isRecoverActive = true;
         yield return null;
+    }
+
+    void PlaySound(AudioClip Sound)
+    {
+        m_audioSource.clip = Sound;
+        m_audioSource.Play();
     }
 }

@@ -7,7 +7,9 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     [Header("References")]
+    [SerializeField] PlayerLivesSystem m_playerLivesSystem;
     [SerializeField] MeshRenderer m_meshRenderer;
+    [SerializeField] AudioSource m_audioSource;
     SphereCollider m_collider;
 
     [Header("Player Input")]
@@ -57,11 +59,16 @@ public class PlayerMovement : MonoBehaviour
     //Score Calculation
     float m_startingZPosition;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip m_Impact;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         //m_meshRenderer = GetComponent<MeshRenderer>();
         m_collider = GetComponent<SphereCollider>();
+        m_audioSource.volume = 1f;
+
         m_speed = m_minSpeed;
 
         m_startingZPosition = transform.position.z;
@@ -117,19 +124,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.transform.tag == "Obstacle")
         {
-            //reset la vitesse
+            //Reset speed
             m_speed = m_minSpeed;
             m_speedParaboleX = 0;
 
-            //Active le knockback
+            //Knockback
             rb.AddForce(new Vector3(0f, 0f, -m_knockbackPower));
 
             StartCoroutine(KnockBackEffect(m_knockbackTime));
             StartCoroutine(RecoveryTime(m_RecoveryTime));
 
+            //Send Hit & Play sound
+            m_playerLivesSystem.Hit();
+            PlaySound(m_Impact);
 
-            //Repositionnement du joueur
-            //Détermination du décalage avec obstacle
+            //Reposition player
+            //Guess offset with object
             Vector2 offsetWithObject = new Vector2(transform.position.x - collision.transform.position.x, transform.position.y - collision.transform.position.y);
 
             if (offsetWithObject.x > 0) rb.AddForce(m_knockbackAlignement, 0f, 0f); //Perso est à droite
@@ -142,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator KnockBackEffect(float _time)
     {
-        yield return new WaitForSeconds(_time); //Attends avant de réinitialiser le knockback
+        yield return new WaitForSeconds(_time); //Wait before reset knockback
         rb.velocity = Vector3.zero;
 
         //print("RESET");
@@ -161,5 +171,9 @@ public class PlayerMovement : MonoBehaviour
         m_collider.enabled = true;
     }
 
-    
+    void PlaySound(AudioClip Sound)
+    {
+        m_audioSource.clip = Sound;
+        m_audioSource.Play();
+    }
 }

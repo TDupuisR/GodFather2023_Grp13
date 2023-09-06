@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class LivesUIManager : MonoBehaviour
 {
-    [SerializeField]
-    private List<Image> LivesImages = new List<Image>();
+    [SerializeField] private List<Image> LivesImages = new List<Image>();
+    private int m_maxLives;
 
     private void Awake()
     {
@@ -16,6 +16,7 @@ public class LivesUIManager : MonoBehaviour
         }
     }
 
+    /*
     private void OnEnable()
     {
         //PlayerMovement += UpdateLives;
@@ -25,18 +26,21 @@ public class LivesUIManager : MonoBehaviour
     {
         //PlayerMovement -= UpdateLives;
     }
+    */
 
-    public void ResetLives()
+    public void ResetLives(int _maxlives)
     {
+        m_maxLives = _maxlives;
+
         foreach (Image image in LivesImages)
         {
             image.enabled = true;
         }
     }
 
-    void UpdateLives(int lives)
+    public void UpdateLives(int lives)
     {
-        for (int i= 0; i < LivesImages.Count; i++)
+        for (int i= 0; i < m_maxLives - lives; i++)
         {
             LivesImages[i].enabled = false;
         }
