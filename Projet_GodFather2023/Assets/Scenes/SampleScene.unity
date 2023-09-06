@@ -334,11 +334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f3b241a0be60240bcb4901b9ed3e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_pointerSpeed: {fileID: 2972885862715734956, guid: 21d72b022f22e5f4caf78de684dc5b0f, type: 3}
+  m_pointerAcceleration: {fileID: 2972885862715734956, guid: 21d72b022f22e5f4caf78de684dc5b0f, type: 3}
   m_sensiPlanMovement: 0.05
-  m_smoothSpeed: 0.08
-  m_clampX: 8
+  m_smoothTime: 0.08
+  m_clampX: 5.6
   m_clampY: 3
+  m_clampSpeed: 1
 --- !u!135 &1646026045
 SphereCollider:
   m_ObjectHideFlags: 0

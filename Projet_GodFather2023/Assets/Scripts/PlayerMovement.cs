@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,15 +5,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Input")]
     [SerializeField] InputActionReference
-        m_pointerSpeed;
+        m_pointerAcceleration;
 
     [Header ("Sensitivity Values")]
-    [SerializeField] float m_sensiPlanMovement = 1.0f;
-    [SerializeField] float m_smoothSpeed;
+    [SerializeField][Range(0.0f, 0.5f)] float m_sensiPlanMovement = 1.0f;
+    [SerializeField][Range(0.01f, 0.5f)] float m_smoothTime;
 
-    [Header("Plan Clamp")]
-    [SerializeField] float m_clampX;
-    [SerializeField] float m_clampY;
+
+    [Header("Clamp")]
+    [SerializeField][Range(0.0f , 10.0f)] float m_clampX;
+    [SerializeField][Range(0.0f, 10.0f)] float m_clampY;
+    [SerializeField][Range(0.0f, 2.0f)] float m_clampSpeed;
 
     [Header("Necessary")]
     Vector3 m_translate;
@@ -30,11 +30,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlanMovement()
     {
-        Vector2 movementInput = m_pointerSpeed.action.ReadValue<Vector2>() * m_sensiPlanMovement;
+        Vector2 movementInput = m_pointerAcceleration.action.ReadValue<Vector2>() * m_sensiPlanMovement;
 
-        m_translate = new(Mathf.SmoothDamp(m_translate.x, movementInput.x, ref m_currentTranslationX, m_smoothSpeed),
-                          Mathf.SmoothDamp(m_translate.y, movementInput.y, ref m_currentTranslationY, m_smoothSpeed),
+        m_translate = new(Mathf.Clamp( Mathf.SmoothDamp(m_translate.x, movementInput.x, ref m_currentTranslationX, m_smoothTime ), -m_clampSpeed, m_clampSpeed),
+                          Mathf.Clamp( Mathf.SmoothDamp(m_translate.y, movementInput.y, ref m_currentTranslationY, m_smoothTime ), -m_clampSpeed, m_clampSpeed),
                           0f);
+
+        Debug.Log(m_translate);
 
         transform.Translate(m_translate);
 
