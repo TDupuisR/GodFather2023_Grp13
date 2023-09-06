@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     [Header("References")]
-    MeshRenderer m_meshRenderer;
+    [SerializeField] MeshRenderer m_meshRenderer;
     SphereCollider m_collider;
 
     [Header("Player Input")]
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        m_meshRenderer = GetComponent<MeshRenderer>();
+        //m_meshRenderer = GetComponent<MeshRenderer>();
         m_collider = GetComponent<SphereCollider>();
         m_speed = m_minSpeed;
     }
