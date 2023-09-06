@@ -72,12 +72,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 movementInput = m_pointerAcceleration.action.ReadValue<Vector2>() * m_sensiPlanMovement;
 
+        //Calculate and clamp acceleration Vector
         m_translate = new(Mathf.Clamp( Mathf.SmoothDamp(m_translate.x, movementInput.x, ref m_currentTranslationX, m_smoothTime ), -m_clampSpeed, m_clampSpeed),
                           Mathf.Clamp( Mathf.SmoothDamp(m_translate.y, movementInput.y, ref m_currentTranslationY, m_smoothTime ), -m_clampSpeed, m_clampSpeed),
                           0f);
 
         transform.Translate(m_translate);
 
+        //Keep the player in bound
         transform.position = new(Mathf.Clamp(transform.position.x, -m_clampX, m_clampX),
                                  Mathf.Clamp(transform.position.y, -m_clampY, m_clampY),
                                  transform.position.z);
@@ -132,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(_time); //Attends avant de réinitialiser le knockback
         rb.velocity = Vector3.zero;
 
-        print("RESET");
+        //print("RESET");
     }
 
     IEnumerator RecoveryTime(float _time)
