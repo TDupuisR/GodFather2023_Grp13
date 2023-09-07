@@ -76,7 +76,7 @@ public class FocusMode : MonoBehaviour
 
     private void GameStarted(bool _isActive)
     {
-        StartCoroutine(CoolDownDemo());
+        if(_isActive) StartCoroutine(CoolDownDemo());
         m_focusWasPressed = false;
         m_currentFocusTime = m_maxFocusTime;
         m_isFocusActive = false;
@@ -134,7 +134,7 @@ public class FocusMode : MonoBehaviour
     private IEnumerator CoolDownDemo()
     {
         yield return new WaitForSeconds(0.2f);
-        m_isDemo = true;
+        m_isDemo = false;
     }
 
     private IEnumerator StopFocus()
