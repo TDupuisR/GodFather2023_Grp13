@@ -46,7 +46,7 @@ public class FocusMode : MonoBehaviour
         }
         else
         {
-            DemoFocus();
+            //DemoFocus();
         }
 
         //Debug.Log("Current Time: " + m_currentFocusTime + " | is Focus active: " + m_isFocusActive + " | Time Scale: " + Time.timeScale + " | isRecover: " + m_isRecoverActive);
@@ -98,6 +98,7 @@ public class FocusMode : MonoBehaviour
         else if (!focusIsPressed) m_focusWasPressed = false;
     }
 
+    /*
     private void DemoFocus()
     {
         bool focusIsPressed;
@@ -123,6 +124,7 @@ public class FocusMode : MonoBehaviour
         }
         else if (!focusIsPressed) { m_focusWasPressed = false; }
     }
+    */
 
     private void ChangeTimeScale(float _time, bool _isFocusActive)
     {
