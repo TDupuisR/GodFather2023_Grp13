@@ -9,14 +9,14 @@ namespace Shirotetsu
 {
     public class Map : Singleton<Map>
     {
-        public List<GameObject> AllObstacles => m_allObstacles;
-        [SerializeField] private List<GameObject> m_allObstacles;
+        public List<ObstaclePattern> AllObstacles => m_allObstacles;
+        [SerializeField] private List<ObstaclePattern> m_allObstacles;
 
         [SerializeField] private GameObject m_obstaclesHolder;
 
         public GameObject player;
 
-        public void SetUpAllObstacles()
+        /*public void SetUpAllObstacles()
         {
             foreach (Transform transformChild in m_obstaclesHolder.transform)
             {
@@ -25,10 +25,10 @@ namespace Shirotetsu
                     m_allObstacles.Add(transformChild.gameObject);
                 }
             }
-        }
+        }*/
     }
 
-    [CustomEditor(typeof(Map))]
+    /*[CustomEditor(typeof(Map))]
     public class MapEditor : Editor
     {
         public override void OnInspectorGUI()
@@ -40,5 +40,5 @@ namespace Shirotetsu
             if (GUILayout.Button("SetUpAllObstacles"))
                 map.SetUpAllObstacles();
         }
-    }
+    }*/
 }
