@@ -12,6 +12,7 @@ namespace Shirotetsu
         public List<ObstaclePattern> AllObstacles => m_allObstacles;
         [SerializeField] private List<ObstaclePattern> m_allObstacles;
 
+        public GameObject ObstaclesHolder => m_obstaclesHolder;
         [SerializeField] private GameObject m_obstaclesHolder;
 
         public GameObject player;

@@ -1,9 +1,12 @@
+using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using Shirotetsu;
+using Unity.VisualScripting;
+using Sequence = DG.Tweening.Sequence;
 
 public class ObstaclePattern : MonoBehaviour
 {
@@ -74,6 +77,12 @@ public class ObstaclePattern : MonoBehaviour
     {
         SetUpAllObstacles();
     }
+
+    public void DestroyObstaclePattern()
+    {
+	    Map.Instance.AllObstacles.Remove(this);
+	    Destroy(this.gameObject);
+	}
 }
 
 [CustomEditor(typeof(ObstaclePattern))]

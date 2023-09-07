@@ -13,7 +13,7 @@ namespace Shirotetsu
     {
         [Header("References")]
         [SerializeField] private ShockWaveUIManager m_shockWUIManager;
-
+        [SerializeField] private ShockWaveFx m_fx;
         [Header("Player Input")]
         [SerializeField] InputActionReference m_shockWaveButton;
 
@@ -37,6 +37,7 @@ namespace Shirotetsu
                 if (m_currentPowerUpGauge >= 100)
                 {
                     PlaySound(m_shockwaveSound);
+                    StartCoroutine(m_fx.StartFX());
                     ActivateShockWaves();
                 }
             }

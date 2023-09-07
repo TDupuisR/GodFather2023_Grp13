@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stump 2
       objectReference: {fileID: 0}
+    - target: {fileID: 259511127685648022, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 1704482899231672313, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -136,6 +140,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d070ed3b86e324a49be5a313467c1f70, type: 3}
       propertyPath: m_Name
       value: stump (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d070ed3b86e324a49be5a313467c1f70, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d070ed3b86e324a49be5a313467c1f70, type: 3}

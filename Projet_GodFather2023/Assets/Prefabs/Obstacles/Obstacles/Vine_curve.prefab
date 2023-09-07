@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine_curve
       objectReference: {fileID: 0}
+    - target: {fileID: 259511127685648022, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 1704482899231672313, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -129,9 +133,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 39d64e52d3cb94245acfd94325d20ef2, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 39d64e52d3cb94245acfd94325d20ef2, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 39d64e52d3cb94245acfd94325d20ef2, type: 3}
       propertyPath: m_Name
       value: vine_curve
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39d64e52d3cb94245acfd94325d20ef2, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d64e52d3cb94245acfd94325d20ef2, type: 3}

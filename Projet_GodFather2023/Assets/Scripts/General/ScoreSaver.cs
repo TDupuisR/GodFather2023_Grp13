@@ -73,20 +73,20 @@ public class ScoreSaver : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-
+    /*
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 50, 150, 500));
         GUILayout.BeginVertical();
 
-        /*if (GUILayout.Button("Save"))
+        if (GUILayout.Button("Save"))
         {
-            SaveStoredScore(m_scoreValue);
+            SaveStoredScore(36);
         }
         if (GUILayout.Button("Get"))
         {
             GiveStoredScore();
-        }*/
+        }
         if (GUILayout.Button("Reset"))
         {
             ResetStoredScore();
@@ -94,5 +94,5 @@ public class ScoreSaver : MonoBehaviour
 
         GUILayout.EndVertical();
         GUILayout.EndArea();
-    }
+    }*/
 }
