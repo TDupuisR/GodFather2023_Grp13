@@ -6,9 +6,12 @@ public class PlayerLivesSystem : MonoBehaviour
 {
     public int Lives;
 
-    [SerializeField] private PlayerMovement m_playerMovement;
     [SerializeField] private LivesUIManager m_UIManager;
     [SerializeField] private GameObject m_gameoverUIManager;
+
+    public delegate void OnGameOverDelegate(bool value);
+    public static OnGameOverDelegate OnGameOver;
+
     private void Start()
     {
         m_UIManager.ResetLives(Lives);
@@ -19,8 +22,8 @@ public class PlayerLivesSystem : MonoBehaviour
         if(Lives == 0)
         {
             //Death condition
-            m_playerMovement.isAccelerating = false;
             m_gameoverUIManager.SetActive(true);
+            OnGameOver.Invoke(false);
         }
         else
         {

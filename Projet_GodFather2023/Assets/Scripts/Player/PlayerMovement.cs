@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     float m_RecoveryTime;
 
     [Header("Acceleration")]
-    public bool isAccelerating;
+    public bool isAccelerating = false;
     [SerializeField]
     float m_minSpeed;
     [SerializeField]
@@ -63,6 +63,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Sounds")]
     [SerializeField] private AudioClip m_Impact;
 
+    private void OnEnable()
+    {
+        PlayerLivesSystem.OnGameOver += IsAcceleration;
+        HomeScreen.OnGameStarted += IsAcceleration;
+    }
+    private void OnDisable()
+    {
+        PlayerLivesSystem.OnGameOver -= IsAcceleration;
+        HomeScreen.OnGameStarted -= IsAcceleration;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -78,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         PlanMovement();
-        if(isAccelerating) Acceleration();
+        if (isAccelerating) Acceleration();
     }
 
     private void PlanMovement()
@@ -120,6 +131,12 @@ public class PlayerMovement : MonoBehaviour
         int score = (int)(transform.position.z - m_startingZPosition);
         return score;
     }
+
+    private void IsAcceleration(bool _isActive)
+    {
+        isAccelerating = _isActive;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {

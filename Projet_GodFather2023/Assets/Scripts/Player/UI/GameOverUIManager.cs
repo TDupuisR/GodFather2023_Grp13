@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,9 +13,14 @@ public class GameOverUIManager : MonoBehaviour
     [SerializeField] float m_backgroundFadeIn;
     [SerializeField] float m_countdownRestart;
 
+    public delegate void OnGameOverScreenDelegate(int score);
+    public static OnGameOverScreenDelegate OnGameOverScreen;
+
     private void OnEnable()
     {
-        m_finalScoreText.text = "Final score : " + m_playermovement.CalculateScore().ToString();
+        int finalScore = m_playermovement.CalculateScore();
+        m_finalScoreText.text = "Final score : " + finalScore.ToString();
+        OnGameOverScreen.Invoke(finalScore);
         StartCoroutine(BackgroundFadeIn());
         StartCoroutine(CountdownUntilRestart());
     }

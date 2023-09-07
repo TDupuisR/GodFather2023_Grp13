@@ -11,6 +11,17 @@ public class ScoreSaver : MonoBehaviour
 {
     [SerializeField] int m_scoreValue;
 
+    private void OnEnable()
+    {
+        GameOverUIManager.OnGameOverScreen += SaveStoredScore;
+    }
+
+    private void OnDisable()
+    {
+        GameOverUIManager.OnGameOverScreen -= SaveStoredScore;
+    }
+
+
     void SaveStoredScore(int score)
     {
         if (!PlayerPrefs.HasKey("index"))
@@ -32,7 +43,7 @@ public class ScoreSaver : MonoBehaviour
         }
     }
 
-    private int[] GetStoredScore()
+    public int[] GiveStoredScore()
     {
         int[] tab = new int[0];
 
@@ -68,8 +79,6 @@ public class ScoreSaver : MonoBehaviour
     private void ResetStoredScore()
     {
         PlayerPrefs.DeleteAll();
-
-        Debug.Log("index reset");
     }
 
 
@@ -84,7 +93,7 @@ public class ScoreSaver : MonoBehaviour
         }
         if (GUILayout.Button("Get"))
         {
-            GetStoredScore();
+            GiveStoredScore();
         }
         if (GUILayout.Button("Reset"))
         {
