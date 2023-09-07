@@ -1140,6 +1140,8 @@ MonoBehaviour:
   - {fileID: 7563484427615718753}
   - {fileID: 2746734674207982741}
   - {fileID: 2587177424390246456}
+  m_lifeSprite: {fileID: 21300000, guid: 7f9735fbeab5d54469f445b94e9678c1, type: 3}
+  m_deadSprite: {fileID: 21300000, guid: ca9b6859c585e8f4d95a820bc18f9e90, type: 3}
 --- !u!1 &8856180635560732635
 GameObject:
   m_ObjectHideFlags: 0

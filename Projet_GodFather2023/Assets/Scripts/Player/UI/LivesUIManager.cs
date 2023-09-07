@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class LivesUIManager : MonoBehaviour
 {
     [SerializeField] private List<Image> LivesImages = new List<Image>();
+    [SerializeField] private Sprite m_lifeSprite;
+    [SerializeField] private Sprite m_deadSprite;
     private int m_maxLives;
 
     private void Awake()
     {
         foreach(Image image in LivesImages)
         {
-            image.enabled = true;
+            image.sprite = m_lifeSprite;
         }
     }
 
@@ -42,7 +44,7 @@ public class LivesUIManager : MonoBehaviour
     {
         for (int i= 0; i < m_maxLives - lives; i++)
         {
-            LivesImages[i].enabled = false;
+            LivesImages[i].sprite = m_deadSprite;
         }
     }
 }
