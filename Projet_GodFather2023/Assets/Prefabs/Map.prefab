@@ -61,9 +61,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29540920370fca4582c3f476c2e337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allEasyPattern:
-  - {fileID: 6707310023004935892, guid: 530dc0baadb326f42b57368d09030c00, type: 3}
-  m_defaultTimeBeforeNewSpawn: 1
+  m_allEasyPatternPrefabs:
+  - {fileID: 7057729229937295646, guid: 93336e6f72f086343b87d1bce9ff5610, type: 3}
+  - {fileID: -8115337796822438698, guid: e8b7347188bf0f2479e57d727c7d63e7, type: 3}
+  - {fileID: 4821101133049543589, guid: 50c57ace3c1b1da4786e7e75ed4f5503, type: 3}
+  - {fileID: 7983547028111705295, guid: 95518b925114bcd4fada9269c1981398, type: 3}
+  - {fileID: -5841476131843627684, guid: 259cc94651529584c8a7c1bb1cfe891f, type: 3}
+  m_allMediumPatternPrefabs:
+  - {fileID: 5063038435807147586, guid: 698148a886843084eb1a17f52d763d58, type: 3}
+  - {fileID: -6764065991655017227, guid: dc280a88db1ba2741a88ec7da11129c0, type: 3}
+  - {fileID: 4833682687623608139, guid: 12cac6451b305e048bd69ea0b3045f73, type: 3}
+  - {fileID: -4591981289971035428, guid: 47fa354d64e639948b4d4976d9347851, type: 3}
+  - {fileID: 2612697388912514073, guid: 24fe73b1180272c4899f3018a548ccb5, type: 3}
+  m_allHardPatternPrefabs:
+  - {fileID: 6524070242728167498, guid: b734d9b4417b905478e4d6c5a3522f08, type: 3}
+  - {fileID: -7238046772057436441, guid: 53c6a6522d02ec6419a1d27018ed8ad1, type: 3}
+  - {fileID: 6705765362644188203, guid: f1982689232d8b145b10a56cbab764dc, type: 3}
+  - {fileID: -8277224037891609267, guid: 345872690ddc3dc4bb2020c02fb46539, type: 3}
+  - {fileID: 8470542703098692916, guid: 4de3566968376c440bb3d70b62cdeb78, type: 3}
+  m_defaultTimeBeforeNewSpawn: 0.5
   m_offsetBetweenPattern: 50
 --- !u!1 &6868536591684994760
 GameObject:
