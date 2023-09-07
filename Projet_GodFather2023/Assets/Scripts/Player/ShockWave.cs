@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -13,22 +14,29 @@ namespace Shirotetsu
         [Header("References")]
         [SerializeField] private ShockWaveUIManager m_shockWUIManager;
 
+        [Header("Player Input")]
+        [SerializeField] InputActionReference m_shockWaveButton;
+
         [Header("Parameters")]
         [SerializeField] private float m_shockWaveMaxRange = 5;
 
         [SerializeField] private int m_amountGainPickUpPowerUp = 20;
-        
 
         public int m_currentPowerUpGauge = 0;
+
+        [Header("Sounds")]
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private AudioClip m_shockwaveSound;
 
         private Sequence m_destroyObstaclesSequence;
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (m_shockWaveButton.action.ReadValue<float>() != 0)
             {
                 if (m_currentPowerUpGauge >= 100)
                 {
+                    PlaySound(m_shockwaveSound);
                     ActivateShockWaves();
                 }
             }
@@ -81,6 +89,12 @@ namespace Shirotetsu
         private void OnDestroy()
         {
             m_destroyObstaclesSequence.Kill();
+        }
+
+        void PlaySound(AudioClip Sound)
+        {
+            m_audioSource.clip = Sound;
+            m_audioSource.Play();
         }
     }
 

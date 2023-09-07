@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     float m_RecoveryTime;
 
     [Header("Acceleration")]
+    public bool isAccelerating;
     [SerializeField]
     float m_minSpeed;
     [SerializeField]
@@ -77,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         PlanMovement();
-        Acceleration();
+        if(isAccelerating) Acceleration();
     }
 
     private void PlanMovement()
