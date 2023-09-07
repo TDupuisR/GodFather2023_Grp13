@@ -10,6 +10,7 @@ public class ShockWaveUIManager : MonoBehaviour
     private void Awake()
     {
         slider = GetComponent<Slider>();
+        slider.value = 0;
     }
 
     public void UpdateGauge(int newvalue)

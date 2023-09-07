@@ -21,9 +21,12 @@ namespace Shirotetsu
         [SerializeField] private float m_shockWaveMaxRange = 5;
 
         [SerializeField] private int m_amountGainPickUpPowerUp = 20;
-        
 
         public int m_currentPowerUpGauge = 0;
+
+        [Header("Sounds")]
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private AudioClip m_shockwaveSound;
 
         private Sequence m_destroyObstaclesSequence;
 
@@ -31,9 +34,9 @@ namespace Shirotetsu
         {
             if (m_shockWaveButton.action.ReadValue<float>() != 0)
             {
-                print("activate");
                 if (m_currentPowerUpGauge >= 100)
                 {
+                    PlaySound(m_shockwaveSound);
                     ActivateShockWaves();
                 }
             }
@@ -86,6 +89,12 @@ namespace Shirotetsu
         private void OnDestroy()
         {
             m_destroyObstaclesSequence.Kill();
+        }
+
+        void PlaySound(AudioClip Sound)
+        {
+            m_audioSource.clip = Sound;
+            m_audioSource.Play();
         }
     }
 

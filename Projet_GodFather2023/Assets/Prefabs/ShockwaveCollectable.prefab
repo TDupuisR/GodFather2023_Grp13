@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7123a810ab96b5244a28475ad55be63e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_meshRenderer: {fileID: 1598018303362229589}
   m_audioSource: {fileID: 4477704729699377654}
   m_soundCollected: {fileID: 8300000, guid: e82cc17666dd70b4083cb91561516901, type: 3}
 --- !u!82 &4477704729699377654

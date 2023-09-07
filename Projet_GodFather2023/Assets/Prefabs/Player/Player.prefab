@@ -246,6 +246,8 @@ MonoBehaviour:
   m_shockWaveMaxRange: 100
   m_amountGainPickUpPowerUp: 20
   m_currentPowerUpGauge: 0
+  m_audioSource: {fileID: 113821035252236619}
+  m_shockwaveSound: {fileID: 8300000, guid: e9051ef69a5c79543a5ba6d3e0e986d0, type: 3}
 --- !u!114 &2387068161561951180
 MonoBehaviour:
   m_ObjectHideFlags: 0
