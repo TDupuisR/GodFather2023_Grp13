@@ -53,10 +53,6 @@ public class FocusMode : MonoBehaviour
             FocusActivation();
             if (m_isRecoverActive && !m_isFocusActive) RecoverFocusTime();
         }
-        else
-        {
-            //DemoFocus();
-        }
 
         //Debug.Log("Current Time: " + m_currentFocusTime + " | is Focus active: " + m_isFocusActive + " | Time Scale: " + Time.timeScale + " | isRecover: " + m_isRecoverActive);
     }
@@ -80,7 +76,7 @@ public class FocusMode : MonoBehaviour
 
     private void GameStarted(bool _isActive)
     {
-        m_isDemo = !_isActive;
+        StartCoroutine(CoolDownDemo());
         m_focusWasPressed = false;
         m_currentFocusTime = m_maxFocusTime;
         m_isFocusActive = false;
@@ -117,34 +113,6 @@ public class FocusMode : MonoBehaviour
         else if (!focusIsPressed) m_focusWasPressed = false;
     }
 
-    /*
-    private void DemoFocus()
-    {
-        bool focusIsPressed;
-        if (m_focusButton.action.ReadValue<float>() != 0f) focusIsPressed = true;
-        else focusIsPressed = false;
-
-        if (focusIsPressed && !m_focusWasPressed)
-        {
-            if (Time.timeScale != m_focusTimeScale)
-            {
-                ChangeTimeScale(m_focusTimeScale, true);
-                StartCoroutine(m_focusFiltre.StartFiltre());
-                PlaySound(m_focusOn);
-            }
-            else
-            {
-                ChangeTimeScale(1.0f, false);
-                StartCoroutine(m_focusFiltre.EndFiltre());
-                PlaySound(m_focusOff);
-            }
-
-            m_focusWasPressed = true;
-        }
-        else if (!focusIsPressed) { m_focusWasPressed = false; }
-    }
-    */
-
     private void ChangeTimeScale(float _time, bool _isFocusActive)
     {
         Time.timeScale = _time;
@@ -161,6 +129,12 @@ public class FocusMode : MonoBehaviour
             m_isRecoverActive = false;
             m_currentFocusTime = m_maxFocusTime;
         }
+    }
+
+    private IEnumerator CoolDownDemo()
+    {
+        yield return new WaitForSeconds(0.2f);
+        m_isDemo = false;
     }
 
     private IEnumerator StopFocus()
