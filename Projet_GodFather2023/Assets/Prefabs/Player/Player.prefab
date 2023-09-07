@@ -195,7 +195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lives: 3
+  m_playerMovement: {fileID: 8792548381305752557}
   m_UIManager: {fileID: 0}
+  m_gameoverUIManager: {fileID: 0}
 --- !u!114 &8792548381305752557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +223,7 @@ MonoBehaviour:
   m_knockbackTime: 1
   m_knockbackAlignement: 0
   m_RecoveryTime: 1
+  isAccelerating: 1
   m_minSpeed: 1
   m_maxSpeed: 62
   m_speedParaboleProgression: 0.2
@@ -239,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shockWUIManager: {fileID: 0}
+  m_shockWaveButton: {fileID: -6591685803568946939, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
   m_shockWaveMaxRange: 100
   m_amountGainPickUpPowerUp: 20
   m_currentPowerUpGauge: 0

@@ -40,7 +40,7 @@ public class FocusMode : MonoBehaviour
         FocusActivation();
         if (m_isRecoverActive && !m_isFocusActive) RecoverFocusTime();
 
-        Debug.Log("Current Time: " + m_currentFocusTime + " | is Focus active: " + m_isFocusActive + " | Time Scale: " + Time.timeScale + " | isRecover: " + m_isRecoverActive);
+        //Debug.Log("Current Time: " + m_currentFocusTime + " | is Focus active: " + m_isFocusActive + " | Time Scale: " + Time.timeScale + " | isRecover: " + m_isRecoverActive);
     }
 
     private void FocusActivation()

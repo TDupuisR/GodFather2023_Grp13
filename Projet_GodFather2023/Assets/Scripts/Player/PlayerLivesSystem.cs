@@ -6,8 +6,9 @@ public class PlayerLivesSystem : MonoBehaviour
 {
     public int Lives;
 
+    [SerializeField] private PlayerMovement m_playerMovement;
     [SerializeField] private LivesUIManager m_UIManager;
-
+    [SerializeField] private GameObject m_gameoverUIManager;
     private void Start()
     {
         m_UIManager.ResetLives(Lives);
@@ -18,6 +19,8 @@ public class PlayerLivesSystem : MonoBehaviour
         if(Lives == 0)
         {
             //Death condition
+            m_playerMovement.isAccelerating = false;
+            m_gameoverUIManager.SetActive(true);
         }
         else
         {

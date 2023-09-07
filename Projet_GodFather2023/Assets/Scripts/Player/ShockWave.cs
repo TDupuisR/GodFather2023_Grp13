@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -12,6 +13,9 @@ namespace Shirotetsu
     {
         [Header("References")]
         [SerializeField] private ShockWaveUIManager m_shockWUIManager;
+
+        [Header("Player Input")]
+        [SerializeField] InputActionReference m_shockWaveButton;
 
         [Header("Parameters")]
         [SerializeField] private float m_shockWaveMaxRange = 5;
@@ -25,8 +29,9 @@ namespace Shirotetsu
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (m_shockWaveButton.action.ReadValue<float>() != 0)
             {
+                print("activate");
                 if (m_currentPowerUpGauge >= 100)
                 {
                     ActivateShockWaves();
