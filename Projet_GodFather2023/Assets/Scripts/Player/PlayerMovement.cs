@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         m_collider = GetComponent<SphereCollider>();
         m_audioSource.volume = 1f;
 
+        isAccelerating = false;
         m_speed = m_minSpeed;
 
         m_startingZPosition = transform.position.z;

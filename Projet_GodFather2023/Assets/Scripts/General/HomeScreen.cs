@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private ScoreSaver m_scoreSaverScript;
-    [SerializeField] private GameObject m_prefabScoreLine;
+    [SerializeField] private ScoreBoardLine m_prefabScoreLine;
 
     [SerializeField] public Slider m_holdCircle;
 
@@ -34,13 +34,15 @@ public class HomeScreen : MonoBehaviour
         int[] scoresBoard = m_scoreSaverScript.GiveStoredScore();
         int numberOfScores = 9;
 
-        if (PlayerPrefs.GetInt("index") < 9) numberOfScores = PlayerPrefs.GetInt("index");
-
-        for (int i = 0; i <= numberOfScores; i++)
+        if (PlayerPrefs.HasKey("index"))
         {
-            Debug.Log("Score Board Line N°" + i);
-            GameObject prefab = Instantiate(m_prefabScoreLine, transform);
-            prefab.GetComponent<ScoreBoardLine>().SetScoreValue(scoresBoard[i], i);
+            if (PlayerPrefs.GetInt("index") < 9) numberOfScores = PlayerPrefs.GetInt("index");
+
+            for (int i = 0; i <= numberOfScores; i++)
+            {
+                ScoreBoardLine prefab = Instantiate(m_prefabScoreLine, transform);
+                prefab.SetScoreValue(scoresBoard[i], i);
+            }
         }
     }
 
