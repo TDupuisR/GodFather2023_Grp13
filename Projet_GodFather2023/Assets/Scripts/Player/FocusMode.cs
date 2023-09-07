@@ -30,10 +30,19 @@ public class FocusMode : MonoBehaviour
     public delegate void OnFocusUseDelegate(float value);
     public static event OnFocusUseDelegate OnFocusUse;
 
+    private void OnEnable()
+    {
+        HomeScreen.OnGameStarted += GameStarted;
+    }
+    private void OnDisable()
+    {
+        HomeScreen.OnGameStarted -= GameStarted;
+    }
+
+
     private void Start()
     {
-        m_currentFocusTime = m_maxFocusTime;
-        OnFocusUse.Invoke(m_currentFocusTime);
+        GameStarted(false);
     }
 
     private void FixedUpdate()
@@ -67,6 +76,16 @@ public class FocusMode : MonoBehaviour
             FocusAction();
         }
     }
+
+    private void GameStarted(bool _isActive)
+    {
+        m_isDemo = !_isActive;
+        m_focusWasPressed = false;
+        m_currentFocusTime = m_maxFocusTime;
+        m_isFocusActive = false;
+        m_isRecoverActive = false;
+
+}
 
     private void FocusAction()
     {

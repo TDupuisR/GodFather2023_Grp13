@@ -1,16 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using Unity.VisualScripting;
-using OpenCover.Framework.Model;
-using System;
-using UnityEngine.SocialPlatforms.Impl;
+
 
 public class ScoreSaver : MonoBehaviour
 {
-    [SerializeField] int m_scoreValue;
-
     private void OnEnable()
     {
         GameOverUIManager.OnGameOverScreen += SaveStoredScore;
@@ -61,9 +53,9 @@ public class ScoreSaver : MonoBehaviour
                 {
                     if (score > tab[j])
                     {
-                        for (int k = index-1; k > j; k--)
+                        for (int k = index; k > j; k--)
                         {
-                            tab[k+1] = tab[k];
+                            tab[k] = tab[k-1];
                         }
 
                         tab[j] = score;
@@ -82,19 +74,19 @@ public class ScoreSaver : MonoBehaviour
     }
 
 
-    /*private void OnGUI()
+    private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 50, 150, 500));
         GUILayout.BeginVertical();
 
-        if (GUILayout.Button("Save"))
+        /*if (GUILayout.Button("Save"))
         {
             SaveStoredScore(m_scoreValue);
         }
         if (GUILayout.Button("Get"))
         {
             GiveStoredScore();
-        }
+        }*/
         if (GUILayout.Button("Reset"))
         {
             ResetStoredScore();
@@ -102,5 +94,5 @@ public class ScoreSaver : MonoBehaviour
 
         GUILayout.EndVertical();
         GUILayout.EndArea();
-    }*/
+    }
 }

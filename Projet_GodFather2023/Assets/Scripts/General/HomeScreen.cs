@@ -1,14 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private ScoreSaver m_scoreSaverScript;
     [SerializeField] private GameObject m_prefabScoreLine;
 
+    [SerializeField] public Slider m_holdCircle;
+
     [SerializeField] InputActionReference
-    m_focusActionButton,
-    m_shockwaveActionButton;
+    m_focusButton,
+    m_shockwaveButton;
+
+    private float m_circleProgression = 0;
 
     public delegate void OnGameStartDelegate(bool isPlayStarted);
     public static OnGameStartDelegate OnGameStarted;
@@ -17,6 +22,11 @@ public class HomeScreen : MonoBehaviour
     {
         LeaderBoardSetup();
         OnGameStarted.Invoke(false);
+    }
+
+    private void Update()
+    {
+        HoldToStart();
     }
 
     private void LeaderBoardSetup()
@@ -34,6 +44,25 @@ public class HomeScreen : MonoBehaviour
         }
     }
 
+    private void HoldToStart()
+    {
+        if (m_circleProgression < 1f)
+        {
+            if (m_focusButton.action.ReadValue<float>() != 0f && m_shockwaveButton.action.ReadValue<float>() != 0f)
+            {
+                m_circleProgression += (Time.deltaTime / Time.timeScale);
+            }
+            else if (m_circleProgression > 0f)
+            {
+                m_circleProgression -= (Time.deltaTime / Time.timeScale);
+            }
 
-
+            m_holdCircle.value = m_circleProgression;
+        }
+        else
+        {
+            OnGameStarted.Invoke(true);
+            gameObject.SetActive(false);
+        }
+    }
 }

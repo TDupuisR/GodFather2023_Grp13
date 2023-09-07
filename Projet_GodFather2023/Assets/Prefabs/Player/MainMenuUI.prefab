@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 221763123289932190}
   - component: {fileID: 221763123289932161}
   - component: {fileID: 221763123289932160}
+  - component: {fileID: 2959347582855694098}
   m_Layer: 5
   m_Name: MainMenuUI
   m_TagString: Untagged
@@ -266,6 +267,23 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2959347582855694098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221763123289932163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89db0b023d047c8418dcb81c0c3c1df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_scoreSaverScript: {fileID: 0}
+  m_prefabScoreLine: {fileID: 4790394184159100946, guid: 51e054aeb8e29a747827342f07478b13, type: 3}
+  m_holdCircle: {fileID: 221763122376019213}
+  m_focusButton: {fileID: -3566524135862300974, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
+  m_shockwaveButton: {fileID: -6591685803568946939, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
 --- !u!1 &221763124242890137
 GameObject:
   m_ObjectHideFlags: 0
