@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vine_curve
       objectReference: {fileID: 0}
+    - target: {fileID: 259511127685648022, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 1704482899231672313, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -134,7 +134,7 @@ public class FocusMode : MonoBehaviour
     private IEnumerator CoolDownDemo()
     {
         yield return new WaitForSeconds(0.2f);
-        m_isDemo = false;
+        m_isDemo = true;
     }
 
     private IEnumerator StopFocus()
