@@ -6,6 +6,7 @@ public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private ScoreSaver m_scoreSaverScript;
     [SerializeField] private GameObject m_prefabScoreLine;
+    [SerializeField] private Transform m_HighScoreLayoutTransform;
 
     [SerializeField] public Slider m_holdCircle;
 
@@ -18,10 +19,10 @@ public class HomeScreen : MonoBehaviour
     public delegate void OnGameStartDelegate(bool isPlayStarted);
     public static OnGameStartDelegate OnGameStarted;
 
-    private void Start()
+    private void Awake()
     {
         LeaderBoardSetup();
-        OnGameStarted.Invoke(false);
+        //OnGameStarted.Invoke(false);
     }
 
     private void Update()
@@ -40,7 +41,8 @@ public class HomeScreen : MonoBehaviour
         {
             Debug.Log("Score Board Line N°" + i);
             GameObject prefab = Instantiate(m_prefabScoreLine, transform);
-            prefab.GetComponent<ScoreBoardLine>().SetScoreValue(scoresBoard[i], i);
+            prefab.transform.SetParent(m_HighScoreLayoutTransform);
+            //prefab.GetComponent<ScoreBoardLine>().SetScoreValue(scoresBoard[i], i);
         }
     }
 
