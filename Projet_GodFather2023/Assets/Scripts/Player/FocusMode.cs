@@ -6,6 +6,7 @@ public class FocusMode : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] AudioSource m_audioSource;
+    [SerializeField] FocusFiltre m_focusFiltre;
 
     [Header("Player Input")]
     [SerializeField] InputActionReference
@@ -80,11 +81,15 @@ public class FocusMode : MonoBehaviour
             {
                 ChangeTimeScale(m_focusTimeScale, true);
                 m_isRecoverActive = false;
+
+                StartCoroutine(m_focusFiltre.StartFiltre());
                 PlaySound(m_focusOn);
             }
             else
             {
                 StartCoroutine(StopFocus());
+
+                StartCoroutine(m_focusFiltre.EndFiltre());
                 PlaySound(m_focusOff);
             }
 
@@ -104,11 +109,13 @@ public class FocusMode : MonoBehaviour
             if (Time.timeScale != m_focusTimeScale)
             {
                 ChangeTimeScale(m_focusTimeScale, true);
+                StartCoroutine(m_focusFiltre.StartFiltre());
                 PlaySound(m_focusOn);
             }
             else
             {
                 ChangeTimeScale(1.0f, false);
+                StartCoroutine(m_focusFiltre.EndFiltre());
                 PlaySound(m_focusOff);
             }
 
