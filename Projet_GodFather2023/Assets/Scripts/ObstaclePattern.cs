@@ -37,6 +37,8 @@ public class ObstaclePattern : MonoBehaviour
 
     public void SetUpAllObstacles()
     {
+        m_allObstaclesInParttern.Clear();
+
         foreach (Transform transformChild in m_allObstaclesHolder.transform)
         {
             if (!m_allObstaclesInParttern.Contains(transformChild.gameObject))
@@ -66,6 +68,11 @@ public class ObstaclePattern : MonoBehaviour
         {
             DestroyImmediate(gameObject.transform.GetChild(0));
         }
+    }
+
+    private void OnValidate()
+    {
+        SetUpAllObstacles();
     }
 }
 
