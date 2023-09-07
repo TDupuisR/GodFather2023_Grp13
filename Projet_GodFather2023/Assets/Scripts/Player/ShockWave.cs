@@ -44,23 +44,20 @@ namespace Shirotetsu
 
         private void ActivateShockWaves()
         {
-            foreach (GameObject obstacles in ObstaclesInShockWaveRange())
+            foreach (ObstaclePattern obstaclesPattern in ObstaclesInShockWaveRange())
             {
-                Map.Instance.AllObstacles.Remove(obstacles);
+                Map.Instance.AllObstacles.Remove(obstaclesPattern);
 
-                m_destroyObstaclesSequence = DOTween.Sequence();
-
-                m_destroyObstaclesSequence.Append(obstacles.transform.DOPunchScale(Vector3.one * 0.1f, 0.3f));
-                m_destroyObstaclesSequence.Append(obstacles.transform.DOScale(0, 0.1f).OnComplete(() => Destroy(obstacles)));
+                obstaclesPattern.DestroyAllObstaclesByShockWave();
             }
 
             m_currentPowerUpGauge = 0;
             m_shockWUIManager.UpdateGauge(0);
         }
 
-        private List<GameObject> ObstaclesInShockWaveRange()
+        private List<ObstaclePattern> ObstaclesInShockWaveRange()
         {
-            List<GameObject> _ObstaclesInShowWaveRange = new List<GameObject>();
+            List<ObstaclePattern> _ObstaclesInShowWaveRange = new List<ObstaclePattern>();
 
             for (int i = 0; i < Map.Instance.AllObstacles.Count; i++)
             {
