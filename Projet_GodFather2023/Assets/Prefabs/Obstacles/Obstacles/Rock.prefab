@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8214686364448322055, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24360d930e88e9f4aa6eb52fe6998a7a, type: 3}
 --- !u!4 &7665879913137719670 stripped
@@ -76,6 +80,10 @@ PrefabInstance:
     - target: {fileID: 6019862769857921058, guid: 082f6cd290a754748abf1dc02ff86b7d, type: 3}
       propertyPath: m_Name
       value: rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 6019862769857921058, guid: 082f6cd290a754748abf1dc02ff86b7d, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 6395403837666712216, guid: 082f6cd290a754748abf1dc02ff86b7d, type: 3}
       propertyPath: m_RootOrder
