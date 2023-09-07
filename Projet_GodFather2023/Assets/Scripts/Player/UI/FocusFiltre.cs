@@ -18,7 +18,6 @@ public class FocusFiltre : MonoBehaviour
         float timeElapsed = 0;
         while (timeElapsed < 1f)
         {
-            print(timeElapsed);
             m_filtreImage.color = new Color(m_filtreColor.r, m_filtreColor.g, m_filtreColor.b, m_percent*timeElapsed);
 
             yield return null;
@@ -32,7 +31,6 @@ public class FocusFiltre : MonoBehaviour
         float timeElapsed = 1;
         while (timeElapsed > 0f)
         {
-            print(timeElapsed);
             m_filtreImage.color = new Color(m_filtreColor.r, m_filtreColor.g, m_filtreColor.b, timeElapsed);
 
             yield return null;

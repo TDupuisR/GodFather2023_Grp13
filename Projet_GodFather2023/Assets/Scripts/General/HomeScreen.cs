@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class HomeScreen : MonoBehaviour
 {
     [SerializeField] private ScoreSaver m_scoreSaverScript;
-    [SerializeField] private ScoreBoardLine m_prefabScoreLine;
+    [SerializeField] private GameObject m_prefabScoreLine;
+    [SerializeField] private Transform m_HighScoreLayoutTransform;
 
     [SerializeField] public Slider m_holdCircle;
 
@@ -18,10 +19,10 @@ public class HomeScreen : MonoBehaviour
     public delegate void OnGameStartDelegate(bool isPlayStarted);
     public static OnGameStartDelegate OnGameStarted;
 
-    private void Start()
+    private void Awake()
     {
         LeaderBoardSetup();
-        OnGameStarted.Invoke(false);
+        //OnGameStarted.Invoke(false);
     }
 
     private void Update()
