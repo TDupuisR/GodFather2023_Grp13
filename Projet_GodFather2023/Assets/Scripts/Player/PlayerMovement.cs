@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
 
         PlanMovement();
         if(isAccelerating) Acceleration();

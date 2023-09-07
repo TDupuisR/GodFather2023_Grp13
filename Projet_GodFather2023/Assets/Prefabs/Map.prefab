@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5057003508967444987}
   - component: {fileID: 7061891963267208454}
+  - component: {fileID: 8211407836881219209}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -48,6 +49,22 @@ MonoBehaviour:
   m_allObstacles: []
   m_obstaclesHolder: {fileID: 6868536591684994760}
   player: {fileID: 0}
+--- !u!114 &8211407836881219209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200233585111198774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29540920370fca4582c3f476c2e337e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allEasyPattern:
+  - {fileID: 6707310023004935892, guid: 530dc0baadb326f42b57368d09030c00, type: 3}
+  m_defaultTimeBeforeNewSpawn: 1
+  m_offsetBetweenPattern: 50
 --- !u!1 &6868536591684994760
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +80,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8240959937998197279
 Transform:
   m_ObjectHideFlags: 0

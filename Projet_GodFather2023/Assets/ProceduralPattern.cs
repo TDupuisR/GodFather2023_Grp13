@@ -29,14 +29,14 @@ public class ProceduralPattern : MonoBehaviour
 	    }
 	    else
 	    {
-			/*if (Map.Instance.AllObstacles.Count > 0)
+			if (Map.Instance.AllObstacles.Count > 0)
 			{
 				if (Vector3.Dot(Camera.main.transform.forward,
-					    Map.Instance.AllObstacles[0].transform.position - Map.Instance.player.transform.position) < 0)
+						Map.Instance.AllObstacles[0].transform.position - Map.Instance.player.transform.position) < 0)
 				{
 					Map.Instance.AllObstacles[0].DestroyObstaclePattern();
 				}
-			}*/
+			}
 
 			Vector3 posToSpawn = this.transform.position + ((Vector3.forward * (m_patternSpawnedCount + 1)) * m_offsetBetweenPattern);
 
