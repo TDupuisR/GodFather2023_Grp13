@@ -94,8 +94,8 @@ MonoBehaviour:
   - {fileID: 8914726322699612721, guid: 785e497ee4365ae43b32ca5acf510ace, type: 3}
   - {fileID: -8120122974347528345, guid: dcedf450dfa469f46ba78f112da70d02, type: 3}
   - {fileID: 3965579125510612015, guid: 79500966135544c47a3f234fd2f79a32, type: 3}
-  m_defaultTimeBeforeNewSpawn: 0.5
-  m_offsetBetweenPattern: 50
+  m_defaultTimeBeforeNewSpawn: 0.4
+  m_offsetBetweenPattern: 40
 --- !u!1 &6868536591684994760
 GameObject:
   m_ObjectHideFlags: 0
