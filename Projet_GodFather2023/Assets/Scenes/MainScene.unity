@@ -228,6 +228,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &743866965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4926171755303205920, guid: 81a73461839cf584e88f364bf0d2bdea, type: 3}
+  m_PrefabInstance: {fileID: 776317748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0612ed6355a1d4f86f8d1023181394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &776317748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1374,6 +1385,10 @@ PrefabInstance:
       propertyPath: m_gameoverUIManager
       value: 
       objectReference: {fileID: 899526935}
+    - target: {fileID: 2387068161561951180, guid: b1a68fb7d506d9d489e64ed32a1ead7d, type: 3}
+      propertyPath: m_music
+      value: 
+      objectReference: {fileID: 743866965}
     - target: {fileID: 2387068161561951180, guid: b1a68fb7d506d9d489e64ed32a1ead7d, type: 3}
       propertyPath: m_focusFiltre
       value: 
