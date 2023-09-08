@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] MeshRenderer m_meshRenderer;
     [SerializeField] AudioSource m_audioSource;
     SphereCollider m_collider;
+    [SerializeField] private ParticleSystem m_crashFX;
 
     [Header("Animation")]
     [SerializeField] GameObject m_standModel;
@@ -142,6 +144,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.transform.tag == "Obstacle")
         {
+            m_crashFX.Play();
+            collision.gameObject.transform.DOPunchScale(Vector3.one * 0.2f, 0.5f);
+
             //Reset speed
             m_speed = m_minSpeed;
             m_speedParaboleX = 0;
