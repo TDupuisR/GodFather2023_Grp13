@@ -8,6 +8,7 @@ public class FocusMode : MonoBehaviour
     [SerializeField] AudioSource m_audioSource;
     [SerializeField] FocusFiltre m_focusFiltre;
     [SerializeField] PlayerMovement m_playerMovement;
+    [SerializeField] MusicManager m_music;
 
     [Header("Player Input")]
     [SerializeField] InputActionReference
@@ -82,6 +83,7 @@ public class FocusMode : MonoBehaviour
         {
             StartCoroutine(m_playerMovement.AnimationStartRunning());
             StartCoroutine(CoolDownDemo(!_isActive));
+            m_music.PlayGameMusic();
         }
 
         m_focusWasPressed = false;
@@ -138,7 +140,7 @@ public class FocusMode : MonoBehaviour
 
     private IEnumerator CoolDownDemo(bool _isDemoActive)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         m_isDemo = _isDemoActive;
     }
 
