@@ -7,6 +7,7 @@ public class FocusMode : MonoBehaviour
     [Header("References")]
     [SerializeField] AudioSource m_audioSource;
     [SerializeField] FocusFiltre m_focusFiltre;
+    [SerializeField] PlayerMovement m_playerMovement;
 
     [Header("Player Input")]
     [SerializeField] InputActionReference
@@ -76,7 +77,12 @@ public class FocusMode : MonoBehaviour
 
     private void GameStarted(bool _isActive)
     {
-        if(_isActive) StartCoroutine(CoolDownDemo());
+        if (_isActive)
+        {
+            StartCoroutine(m_playerMovement.AnimationStartRunning());
+            StartCoroutine(CoolDownDemo());
+        }
+
         m_focusWasPressed = false;
         m_currentFocusTime = m_maxFocusTime;
         m_isFocusActive = false;

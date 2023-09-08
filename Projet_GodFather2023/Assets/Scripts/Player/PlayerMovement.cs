@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioSource m_audioSource;
     SphereCollider m_collider;
 
+    [Header("Animation")]
+    [SerializeField] GameObject m_standModel;
+    [SerializeField] GameObject m_runModel;
+    [SerializeField] float m_rollingSpeed;
+
     [Header("Player Input")]
     [SerializeField] InputActionReference
         m_pointerAcceleration;
@@ -81,7 +86,11 @@ public class PlayerMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         PlanMovement();
-        if(isAccelerating) Acceleration();
+        if (isAccelerating)
+        {
+            Acceleration();
+            RollingAnimation();
+        }
     }
 
     private void PlanMovement()
@@ -116,6 +125,11 @@ public class PlayerMovement : MonoBehaviour
         //Apply Acceleration
         Vector3 Apply_Movement = new Vector3(0, 0, m_speed);
         transform.Translate(Apply_Movement * Time.deltaTime);
+    }
+
+    private void RollingAnimation()
+    {
+        m_runModel.transform.Rotate(new Vector3(m_rollingSpeed * m_speed, 0, 0) * Time.deltaTime);
     }
 
     public int CalculateScore()
@@ -154,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
     IEnumerator KnockBackEffect(float _time)
     {
         yield return new WaitForSeconds(_time); //Wait before reset knockback
@@ -173,6 +188,33 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(_time / 8);
         }
         m_collider.enabled = true;
+    }
+
+    public IEnumerator AnimationStartRunning()
+    {
+        m_runModel.SetActive(true);
+        float timeElapsed = 1f;
+        while (timeElapsed > 0f)
+        {
+            m_standModel.transform.localScale = new Vector3(timeElapsed * 57, timeElapsed * 57, timeElapsed * 57);
+            m_runModel.transform.localScale = new Vector3((1 - timeElapsed) * 58, (1 - timeElapsed) * 58, (1 - timeElapsed) * 58);
+            yield return null;
+            timeElapsed -= Time.deltaTime;
+        }
+        m_standModel.SetActive(false);
+    }
+    public IEnumerator AnimationEndRunning()
+    {
+        m_standModel.SetActive(true);
+        float timeElapsed = 1f;
+        while (timeElapsed > 0f)
+        {
+            m_standModel.transform.localScale = new Vector3((1 - timeElapsed) * 57, (1 - timeElapsed) * 57, (1 - timeElapsed) * 57);
+            m_runModel.transform.localScale = new Vector3(timeElapsed * 58, timeElapsed * 58, timeElapsed * 58);
+            yield return null;
+            timeElapsed -= Time.deltaTime;
+        }
+        m_runModel.SetActive(false);
     }
 
     void PlaySound(AudioClip Sound)
