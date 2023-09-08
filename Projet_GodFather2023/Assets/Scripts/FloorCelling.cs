@@ -10,7 +10,7 @@ public class FloorCelling : MonoBehaviour
     void FixedUpdate()
     {
         float distanceToPlayer = m_playerTransform.position.z - transform.position.z;
-        print("distance :" + distanceToPlayer);
+        //print("distance :" + distanceToPlayer);
         if(distanceToPlayer > m_distanceBeforeReset) transform.position = new Vector3(0f,0f,m_playerTransform.position.z);
     }
 }
