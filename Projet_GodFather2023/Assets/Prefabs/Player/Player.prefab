@@ -24450,7 +24450,7 @@ MonoBehaviour:
   m_runModel: {fileID: 4685833469986008056}
   m_rollingSpeed: 25
   m_pointerAcceleration: {fileID: 2972885862715734956, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
-  m_sensiPlanMovement: 0.05
+  m_sensiPlanMovement: 0.04
   m_smoothTime: 0.08
   m_clampX: 4.88
   m_clampY: 2.85

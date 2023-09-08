@@ -2693,6 +2693,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690808241288111913, guid: 1e35847540450f044b55da7806a8c676, type: 3}
+      propertyPath: m_resetInput
+      value: 
+      objectReference: {fileID: 6368034347118563093, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
     - target: {fileID: 5238218827282920952, guid: 1e35847540450f044b55da7806a8c676, type: 3}
       propertyPath: m_playerUI
       value: 

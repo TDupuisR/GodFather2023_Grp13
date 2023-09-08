@@ -1,8 +1,10 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 public class ScoreSaver : MonoBehaviour
 {
+    [SerializeField] InputActionReference m_resetInput;
+
     private void OnEnable()
     {
         NameSelector.OnRestartScene += SaveStoredScore;
@@ -11,6 +13,11 @@ public class ScoreSaver : MonoBehaviour
     private void OnDisable()
     {
         NameSelector.OnRestartScene -= SaveStoredScore;
+    }
+
+    private void Update()
+    {
+        if (m_resetInput.action.ReadValue<float>() > 0f) ResetStoredScore();
     }
 
 
