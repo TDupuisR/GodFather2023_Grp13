@@ -20,15 +20,63 @@ public class ProceduralPattern : MonoBehaviour
 	private float m_randomChanceMediumPattern = 0.3f;
 	private float m_randomChanceHardPattern = 0.1f;
 
+	private bool m__gameStarted;
+
+	private float m_timeElapsedSinceStartCurrentLevel;
+	private int m_currentDifficultyIndex = 1;
+
 	// Start is called before the first frame update
 	void Start ()
 	{
+		HomeScreen.OnGameStarted += (x) => m__gameStarted = true;
+
 		m_timerBeforeNewSpawn = m_defaultTimeBeforeNewSpawn;
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
+        if (m__gameStarted)
+        {
+			m_timeElapsedSinceStartCurrentLevel += Time.deltaTime;
+
+            if (m_timeElapsedSinceStartCurrentLevel >= 30 && m_currentDifficultyIndex <= 2)
+            {
+				m_randomChanceMediumPattern = 0.4f;
+				m_randomChanceHardPattern = 0.2f;
+
+				m_currentDifficultyIndex++;
+
+				Debug.LogWarning("30");
+
+				return;
+			}
+			else if (m_timeElapsedSinceStartCurrentLevel >= 60 && m_currentDifficultyIndex <= 3)
+			{
+				m_randomChanceMediumPattern = 0.45f;
+				m_randomChanceHardPattern = 0.25f;
+
+				m_currentDifficultyIndex++;
+
+				Debug.LogWarning("60");
+
+
+				return;
+			}
+			else if (m_timeElapsedSinceStartCurrentLevel >= 90 && m_currentDifficultyIndex <= 4)
+			{
+				m_randomChanceMediumPattern = 0.5f;
+				m_randomChanceHardPattern = 0.35f;
+
+				m_currentDifficultyIndex++;
+
+				Debug.LogWarning("90");
+
+
+				return;
+			}
+		}
+
 		if (m_timerBeforeNewSpawn > 0)
 		{
 			m_timerBeforeNewSpawn -= Time.deltaTime;
@@ -59,9 +107,6 @@ public class ProceduralPattern : MonoBehaviour
 	private ObstaclePattern ChoosePatternToSpawn ()
 	{
 		float random = Random.Range(0f, 1f);
-
-		m_randomChanceMediumPattern += 0.01f;
-		m_randomChanceHardPattern += 0.01f;
 
 		ObstaclePattern RandomPrefab ( List<ObstaclePattern> patternPrefabsToRandom )
 		{
