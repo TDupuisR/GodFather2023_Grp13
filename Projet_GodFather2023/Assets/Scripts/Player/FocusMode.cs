@@ -62,6 +62,7 @@ public class FocusMode : MonoBehaviour
     {
         if (m_currentFocusTime <= 0)
         {
+            PlaySound(m_focusOff);
             StartCoroutine(StopFocus());
         }
         else
@@ -108,10 +109,8 @@ public class FocusMode : MonoBehaviour
             }
             else
             {
-                StartCoroutine(StopFocus());
-
-                StartCoroutine(m_focusFiltre.EndFiltre());
                 PlaySound(m_focusOff);
+                StartCoroutine(StopFocus());
             }
 
             m_focusWasPressed = true;
@@ -137,15 +136,16 @@ public class FocusMode : MonoBehaviour
         }
     }
 
-    private IEnumerator CoolDownDemo()
+    private IEnumerator CoolDownDemo(bool _isDemoActive)
     {
         yield return new WaitForSeconds(0.2f);
-        m_isDemo = false;
+        m_isDemo = _isDemoActive;
     }
 
     private IEnumerator StopFocus()
     {
         ChangeTimeScale(1f, false);
+        StartCoroutine(m_focusFiltre.EndFiltre());
         yield return new WaitForSeconds(3f);
         if (!m_isFocusActive) m_isRecoverActive = true;
         yield return null;

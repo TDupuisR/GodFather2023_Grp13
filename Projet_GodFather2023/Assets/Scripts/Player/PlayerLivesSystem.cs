@@ -8,7 +8,9 @@ public class PlayerLivesSystem : MonoBehaviour
 
     [SerializeField] private LivesUIManager m_UIManager;
     [SerializeField] private GameObject m_gameoverUIManager;
-    [SerializeField] private PlayerMovement m_playerMovement;
+
+    [SerializeField] private FocusMode m_focusScript;
+
     public delegate void OnGameOverDelegate(bool value);
     public static OnGameOverDelegate OnGameOver;
 
@@ -22,7 +24,8 @@ public class PlayerLivesSystem : MonoBehaviour
         if(Lives == 0)
         {
             //Death condition
-            StartCoroutine(m_playerMovement.AnimationEndRunning());
+            m_focusScript.enabled = false;
+            Time.timeScale = 1.0f;
             m_gameoverUIManager.SetActive(true);
             OnGameOver.Invoke(false);
         }
@@ -32,5 +35,20 @@ public class PlayerLivesSystem : MonoBehaviour
             Lives--;
             m_UIManager.UpdateLives(Lives);
         }
+    }
+
+    
+    private void OnGUI()
+    {
+        GUILayout.BeginArea(new Rect(10, 50, 150, 500));
+        GUILayout.BeginVertical();
+
+        if (GUILayout.Button("Life"))
+        {
+            Hit();
+        }
+
+        GUILayout.EndVertical();
+        GUILayout.EndArea();
     }
 }
