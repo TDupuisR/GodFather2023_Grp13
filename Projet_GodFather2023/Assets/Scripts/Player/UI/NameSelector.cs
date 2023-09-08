@@ -12,7 +12,6 @@ public class NameSelector : MonoBehaviour
     [SerializeField] private Text m_letterThree;
 
     [SerializeField] private Text m_validText;
-    [SerializeField] private RectTransform m_pointer;
 
     [Header("Parameters")]
     [SerializeField][Range(0f, 5f)] private float m_alphabetSensi;
@@ -81,8 +80,6 @@ public class NameSelector : MonoBehaviour
         {
             m_wasPressed = false;
         }
-
-        m_pointer.position = new(384f + (50f * m_currentLetterIndex), m_pointer.position.y, m_pointer.position.z);
     }
 
     private void LetterSelector()
