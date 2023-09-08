@@ -2,7 +2,9 @@ using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 using Shirotetsu;
 using Unity.VisualScripting;
@@ -85,6 +87,7 @@ public class ObstaclePattern : MonoBehaviour
 	}
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(ObstaclePattern))]
 public class ObstaclePaternEditor : Editor
 {
@@ -106,3 +109,4 @@ public class ObstaclePaternEditor : Editor
             obstaclePatern.DeleteAllCube();*/
     }
 }
+#endif

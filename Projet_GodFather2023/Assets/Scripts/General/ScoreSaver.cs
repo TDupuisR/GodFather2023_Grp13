@@ -87,7 +87,7 @@ public class ScoreSaver : MonoBehaviour
     }
 
     
-    private void OnGUI()
+    /*private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 10, 150, 500));
         GUILayout.BeginVertical();
@@ -99,5 +99,5 @@ public class ScoreSaver : MonoBehaviour
 
         GUILayout.EndVertical();
         GUILayout.EndArea();
-    }
+    }*/
 }

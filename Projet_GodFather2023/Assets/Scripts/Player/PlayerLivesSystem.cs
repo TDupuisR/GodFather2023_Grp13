@@ -21,9 +21,11 @@ public class PlayerLivesSystem : MonoBehaviour
 
     public void Hit()
     {
-        if(Lives == 0)
+        if(Lives == 1)
         {
             //Death condition
+            Lives--;
+            m_UIManager.UpdateLives(Lives);
             m_focusScript.enabled = false;
             Time.timeScale = 1.0f;
             StartCoroutine(m_playerMovement.AnimationEndRunning());

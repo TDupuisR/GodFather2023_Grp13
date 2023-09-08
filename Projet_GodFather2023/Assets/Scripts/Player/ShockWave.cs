@@ -36,9 +36,9 @@ namespace Shirotetsu
             {
                 if (m_currentPowerUpGauge >= 100)
                 {
+                    ActivateShockWaves();
                     PlaySound(m_shockwaveSound);
                     StartCoroutine(m_fx.StartFX());
-                    ActivateShockWaves();
                 }
             }
         }
@@ -96,6 +96,7 @@ namespace Shirotetsu
         }
     }
 
+#if UNITY_EDITOR
     [CustomEditor(typeof(ShockWave))]
     public class ShockWaveEditor : Editor
     {
@@ -109,4 +110,5 @@ namespace Shirotetsu
                 shockWave.IncreaseGaugePowerUp();
         }
     }
+#endif
 }
