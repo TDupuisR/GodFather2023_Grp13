@@ -66,6 +66,17 @@
                     "action": "ShockWaveButton",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d05e120e-1026-42c1-9474-cfb52bc2d1cd",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShockWaveButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
