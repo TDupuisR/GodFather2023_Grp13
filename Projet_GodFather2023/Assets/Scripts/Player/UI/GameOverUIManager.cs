@@ -9,6 +9,8 @@ public class GameOverUIManager : MonoBehaviour
     [SerializeField] PlayerMovement m_playermovement;
     [SerializeField] Image m_backgroundImage;
     [SerializeField] Text m_finalScoreText;
+    [SerializeField] NameSelector m_nameSelector;
+
     [Header("Parameters")]
     [SerializeField] float m_backgroundFadeIn;
     [SerializeField] float m_countdownRestart;
@@ -20,12 +22,10 @@ public class GameOverUIManager : MonoBehaviour
     {
         int finalScore = m_playermovement.CalculateScore();
         m_finalScoreText.text = "Final score : " + finalScore.ToString();
-        OnGameOverScreen.Invoke(finalScore);
-        StartCoroutine(BackgroundFadeIn());
-        StartCoroutine(CountdownUntilRestart());
+        StartCoroutine(BackgroundFadeIn(finalScore));
     }
 
-    IEnumerator BackgroundFadeIn()
+    IEnumerator BackgroundFadeIn(int sentScore)
     {
         m_backgroundImage.color = new Color(0f, 0f, 0f, 0f);
 
@@ -38,10 +38,11 @@ public class GameOverUIManager : MonoBehaviour
             yield return null;
             timeElapsed += Time.deltaTime / m_backgroundFadeIn;
         }
-    }
-    IEnumerator CountdownUntilRestart()
-    {
-        yield return new WaitForSeconds(m_countdownRestart);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+        m_nameSelector.gameObject.SetActive(true);
+        m_playermovement.gameObject.SetActive(false);
+
+        m_nameSelector.finalScore = sentScore;
     }
 }

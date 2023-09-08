@@ -178,9 +178,9 @@ MonoBehaviour:
   m_playermovement: {fileID: 0}
   m_backgroundImage: {fileID: 5422913803950850306}
   m_finalScoreText: {fileID: 6516314072145899884}
+  m_nameSelector: {fileID: 0}
   m_backgroundFadeIn: 2
   m_countdownRestart: 5
-  finalScore: 0
 --- !u!1 &3825358175786528383
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -215}
+  m_AnchoredPosition: {x: -0.000030518, y: 1}
   m_SizeDelta: {x: 1517.915, y: 209.107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5979063103500665775

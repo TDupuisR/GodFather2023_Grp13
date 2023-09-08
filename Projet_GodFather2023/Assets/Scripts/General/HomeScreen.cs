@@ -22,7 +22,6 @@ public class HomeScreen : MonoBehaviour
     private void Awake()
     {
         LeaderBoardSetup();
-        //OnGameStarted.Invoke(false);
     }
 
     private void Update()
@@ -32,7 +31,7 @@ public class HomeScreen : MonoBehaviour
 
     private void LeaderBoardSetup()
     {
-        int[] scoresBoard = m_scoreSaverScript.GiveStoredScore();
+        (int[] scoresBoard, string[] nameBoard) = m_scoreSaverScript.GiveStoredScore();
         int numberOfScores = 9;
 
         if (PlayerPrefs.HasKey("index"))
@@ -42,7 +41,7 @@ public class HomeScreen : MonoBehaviour
             for (int i = 0; i <= numberOfScores; i++)
             {
                 ScoreBoardLine prefab = Instantiate(m_prefabScoreLine, m_HighScoreLayoutTransform);
-                prefab.SetScoreValue(scoresBoard[i], i);
+                prefab.SetScoreValue(scoresBoard[i], nameBoard[i], i);
             }
         }
     }
