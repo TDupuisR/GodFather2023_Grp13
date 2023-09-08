@@ -47,8 +47,6 @@ public class ProceduralPattern : MonoBehaviour
 
 				m_currentDifficultyIndex++;
 
-				Debug.LogWarning("30");
-
 				return;
 			}
 			else if (m_timeElapsedSinceStartCurrentLevel >= 60 && m_currentDifficultyIndex <= 3)
@@ -58,9 +56,6 @@ public class ProceduralPattern : MonoBehaviour
 
 				m_currentDifficultyIndex++;
 
-				Debug.LogWarning("60");
-
-
 				return;
 			}
 			else if (m_timeElapsedSinceStartCurrentLevel >= 90 && m_currentDifficultyIndex <= 4)
@@ -69,9 +64,6 @@ public class ProceduralPattern : MonoBehaviour
 				m_randomChanceHardPattern = 0.35f;
 
 				m_currentDifficultyIndex++;
-
-				Debug.LogWarning("90");
-
 
 				return;
 			}

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2830646938684298856}
+  - component: {fileID: -1154984510397030645}
   m_Layer: 0
   m_Name: Pattern3
   m_TagString: Untagged
@@ -33,6 +34,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1154984510397030645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5692307066630373560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b02c4fcf486c0d469fbb9093385021b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allObstaclesHolder: {fileID: 5692307066630373560}
+  m_allObstaclesInParttern:
+  - {fileID: 1368096478231485962}
+  - {fileID: 8813391020867959847}
+  m_allPos: []
 --- !u!1001 &3641182916095702226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95,6 +113,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6699418039796957594, guid: c63bfd14a3040004789c5146d0237b90, type: 3}
   m_PrefabInstance: {fileID: 3641182916095702226}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8813391020867959847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5244266815636982005, guid: c63bfd14a3040004789c5146d0237b90, type: 3}
+  m_PrefabInstance: {fileID: 3641182916095702226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8256663337324370861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -155,5 +178,10 @@ PrefabInstance:
 --- !u!4 &486962343946426213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383316723685575880, guid: 82dc943684bb62f40b682d973090a4d6, type: 3}
+  m_PrefabInstance: {fileID: 8256663337324370861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1368096478231485962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6947360912034923943, guid: 82dc943684bb62f40b682d973090a4d6, type: 3}
   m_PrefabInstance: {fileID: 8256663337324370861}
   m_PrefabAsset: {fileID: 0}
