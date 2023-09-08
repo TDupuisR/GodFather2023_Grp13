@@ -239,8 +239,9 @@ MonoBehaviour:
   m_audioSource: {fileID: 113821035252236619}
   m_focusFiltre: {fileID: 0}
   m_playerMovement: {fileID: 8792548381305752557}
+  m_music: {fileID: 0}
   m_focusButton: {fileID: -3566524135862300974, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
-  m_maxFocusTime: 4
+  m_maxFocusTime: 2.5
   m_focusTimeScale: 0.5
   m_focusRecoverMultiplier: 1
   m_focusOn: {fileID: 8300000, guid: 79d6795909d648c48b8d77b052c046fb, type: 3}

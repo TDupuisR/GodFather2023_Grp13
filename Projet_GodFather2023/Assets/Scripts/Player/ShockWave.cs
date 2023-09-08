@@ -36,9 +36,9 @@ namespace Shirotetsu
             {
                 if (m_currentPowerUpGauge >= 100)
                 {
+                    ActivateShockWaves();
                     PlaySound(m_shockwaveSound);
                     StartCoroutine(m_fx.StartFX());
-                    ActivateShockWaves();
                 }
             }
         }
