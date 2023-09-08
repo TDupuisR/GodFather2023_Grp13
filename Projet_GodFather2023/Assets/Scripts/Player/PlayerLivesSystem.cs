@@ -8,7 +8,7 @@ public class PlayerLivesSystem : MonoBehaviour
 
     [SerializeField] private LivesUIManager m_UIManager;
     [SerializeField] private GameObject m_gameoverUIManager;
-
+    [SerializeField] private PlayerMovement m_playerMovement;
     [SerializeField] private FocusMode m_focusScript;
 
     public delegate void OnGameOverDelegate(bool value);
@@ -26,6 +26,7 @@ public class PlayerLivesSystem : MonoBehaviour
             //Death condition
             m_focusScript.enabled = false;
             Time.timeScale = 1.0f;
+            StartCoroutine(m_playerMovement.AnimationEndRunning());
             m_gameoverUIManager.SetActive(true);
             OnGameOver.Invoke(false);
         }
@@ -38,7 +39,7 @@ public class PlayerLivesSystem : MonoBehaviour
     }
 
     
-    private void OnGUI()
+    /*private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(10, 50, 150, 500));
         GUILayout.BeginVertical();
@@ -50,5 +51,5 @@ public class PlayerLivesSystem : MonoBehaviour
 
         GUILayout.EndVertical();
         GUILayout.EndArea();
-    }
+    }*/
 }

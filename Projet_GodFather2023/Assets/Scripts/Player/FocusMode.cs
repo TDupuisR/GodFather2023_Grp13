@@ -81,7 +81,7 @@ public class FocusMode : MonoBehaviour
         if (_isActive)
         {
             StartCoroutine(m_playerMovement.AnimationStartRunning());
-            StartCoroutine(CoolDownDemo());
+            StartCoroutine(CoolDownDemo(!_isActive));
         }
 
         m_focusWasPressed = false;

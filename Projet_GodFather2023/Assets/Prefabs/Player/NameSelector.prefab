@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 4300779748835880313}
   - component: {fileID: 4744570503271020048}
   m_Layer: 5
-  m_Name: StartText
+  m_Name: Validtext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 4194538232964889599}
   - component: {fileID: 872394432080367582}
   - component: {fileID: 3602759348193042954}
-  - component: {fileID: 1408724237863492367}
+  - component: {fileID: 8244877443622065776}
   m_Layer: 5
   m_Name: NameSelector
   m_TagString: Untagged
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1408724237863492367
+--- !u!114 &8244877443622065776
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

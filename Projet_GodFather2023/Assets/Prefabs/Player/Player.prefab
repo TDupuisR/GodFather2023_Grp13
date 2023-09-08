@@ -153,36 +153,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.47981268
   m_Center: {x: -0.020187318, y: 0, z: 0}
---- !u!114 &8792548381305752464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8792548381305752554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 50282553c824d9242aa7d2a0dd03a6da, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerAction
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &274365010246623705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +169,7 @@ MonoBehaviour:
   m_UIManager: {fileID: 0}
   m_gameoverUIManager: {fileID: 0}
   m_playerMovement: {fileID: 8792548381305752557}
+  m_focusScript: {fileID: 2387068161561951180}
 --- !u!114 &8792548381305752557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8bd43766d2a33f04088da7946f30d16c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd43766d2a33f04088da7946f30d16c, type: 3}
