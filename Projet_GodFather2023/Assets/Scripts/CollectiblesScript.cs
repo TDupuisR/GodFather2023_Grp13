@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CollectiblesScript : MonoBehaviour
 {
-    [SerializeField] MeshRenderer m_meshRenderer;
+    [SerializeField] GameObject m_visual;
     [SerializeField] AudioSource m_audioSource;
     [SerializeField] AudioClip m_soundCollected;
 
@@ -15,7 +15,7 @@ public class CollectiblesScript : MonoBehaviour
         {
             other.GetComponent<ShockWave>().IncreaseGaugePowerUp();
             PlaySound(m_soundCollected);
-            m_meshRenderer.enabled = false;
+            m_visual.SetActive(false);
             Destroy(gameObject, m_soundCollected.length);
         }
     }
