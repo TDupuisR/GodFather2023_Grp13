@@ -1193,6 +1193,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2681504724508673367, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525726729396832080, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4757759755318008606, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}
       propertyPath: m_Name
       value: GameOverName
@@ -1284,6 +1292,14 @@ PrefabInstance:
     - target: {fileID: 5915573908990127710, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341802269605259177, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244877443622065776, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}
+      propertyPath: m_alphabetSensi
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0b19ac288aba6644bf551f3c7335b9a, type: 3}

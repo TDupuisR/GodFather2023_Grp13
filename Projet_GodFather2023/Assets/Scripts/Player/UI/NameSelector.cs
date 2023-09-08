@@ -12,6 +12,7 @@ public class NameSelector : MonoBehaviour
     [SerializeField] private Text m_letterThree;
 
     [SerializeField] private Text m_validText;
+    [SerializeField] private RectTransform m_pointer;
 
     [Header("Parameters")]
     [SerializeField][Range(0f, 5f)] private float m_alphabetSensi;
@@ -45,7 +46,6 @@ public class NameSelector : MonoBehaviour
     private void OnEnable()
     {
         m_letterIndex = new Text[3] {m_letterOne, m_letterTwo, m_letterThree};
-        StartCoroutine(FlashingLetter());
         StartCoroutine(CountdownUntilRestart(60f));
     }
 
@@ -82,7 +82,7 @@ public class NameSelector : MonoBehaviour
             m_wasPressed = false;
         }
 
-        Debug.Log("LetterIndex: " + m_currentLetterIndex);
+        m_pointer.position = new(384f + (50f * m_currentLetterIndex), m_pointer.position.y, m_pointer.position.z);
     }
 
     private void LetterSelector()
@@ -122,31 +122,8 @@ public class NameSelector : MonoBehaviour
         }
     }
 
-    IEnumerator FlashingLetter()
-    {
-        int current = m_currentLetterIndex;
-
-        m_letterIndex[current].color = new Color(m_letterIndex[current].color.r,
-                                                 m_letterIndex[current].color.g,
-                                                 m_letterIndex[current].color.b,
-                                                 0f);
-        yield return new WaitForSeconds(0.5f);
-        m_letterIndex[current].color = new Color(m_letterIndex[current].color.r,
-                                                 m_letterIndex[current].color.g,
-                                                 m_letterIndex[current].color.b,
-                                                 255f);
-        yield return new WaitForSeconds(0.5f);
-
-        if (m_selectionActive) StartCoroutine(FlashingLetter());
-        else yield return null;
-    }
-
     IEnumerator CountdownUntilRestart(float _countdown)
     {
-        m_letterIndex[m_currentLetterIndex].color = new Color(m_letterIndex[m_currentLetterIndex].color.r,
-                             m_letterIndex[m_currentLetterIndex].color.g,
-                             m_letterIndex[m_currentLetterIndex].color.b,
-                             255f);
         yield return new WaitForSeconds(_countdown);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
